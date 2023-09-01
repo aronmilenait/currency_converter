@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Currency Converter</title>
+    <link rel="stylesheet" href="css/styles.css">
+    <link rel="icon" href="img/favicon.png" type="image/png">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Lato&family=Montserrat:wght@400;500&display=swap" rel="stylesheet">
+</head>
+<body class="bg-gray-200 min-h-screen flex flex-col justify-between">
+
+<!-- Header Area-->
+
+    <header id="page_header">
+        <h1 id="page_title">Currency Converter</h1>
+    </header>
+
+    <section id="page_description">
+        <p id="description_p">Welcome to our currency converter powered by Exchangerata's API. Whether you're a world traveler, an online shopper, or a financial enthusiast, our tool simplifies currency conversion for you. With up-to-date exchange rates and user-friendly features, it's your go-to solution for hassle-free currency conversions. Explore the world of finance with ease!</p>
+    </section>
+
+<!-- Currency Convertor Area-->
+    <main>
+        <div id="main_div">
+            <h2 id="main_title">Let's convert your currencies!</h2>
+            <form id="currency_converter_form">
+                <div class="input-group">
+                    <label for="baseCurrency">Base currency:</label>
+                    <select id="baseCurrency">
+                    </select>
+                </div>
+                <div class="input-group">
+                    <label for="targetCurrency">Target currency:</label>
+                    <select id="targetCurrency">
+                    </select>
+                </div>
+                <div class="input-group">
+                    <label for="amount">Amount:</label>
+                    <input type="number" id="amount" step="0.01" min="0">
+                </div>
+                <button type="button" id="calculateBtn">Calculate</button>
+                <div id="result"></div>
+    </main>
+    
+
+    <footer>
+        <p id="footer_text">Made by Milena Sol Aron.</p>
+    </footer>
+
+    <script src="src/currency_converter.js"></script>
+    <script src="src/effects.js"></script>
+</body>
+</html>
+
