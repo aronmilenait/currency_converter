@@ -6,6 +6,7 @@
     <title>Currency Converter</title>
     <link rel="stylesheet" href="css/styles.css">
     <link rel="icon" href="img/favicon.png" type="image/png">
+    <!--Fonts-->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500&display=swap" rel="stylesheet">
@@ -13,12 +14,12 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Lato&family=Montserrat:wght@400;500&display=swap" rel="stylesheet">
 </head>
-<body class="bg-gray-200 min-h-screen flex flex-col justify-between">
+<body>
 
 <!-- Header Area-->
 
     <header id="page_header">
-        <h1 id="page_title">Currency Converter</h1>
+        <h1 id="page_title"></h1>
     </header>
 
     <section id="page_description">
@@ -26,16 +27,16 @@
     </section>
 
 <!-- Currency Convertor Area-->
-    <main>
+    <main id="main">
         <div id="main_div">
             <h2 id="main_title">Let's convert your currencies!</h2>
             <form id="currency_converter_form">
-                <div class="input-group">
+                <div class="select-group">
                     <label for="baseCurrency">Base currency:</label>
                     <select id="baseCurrency">
                     </select>
                 </div>
-                <div class="input-group">
+                <div class="select-group">
                     <label for="targetCurrency">Target currency:</label>
                     <select id="targetCurrency">
                     </select>
@@ -43,14 +44,13 @@
                 <div class="input-group">
                     <label for="amount">Amount:</label>
                     <input type="number" id="amount" step="0.01" min="0">
-                </div>
                 <button type="button" id="calculateBtn">Calculate</button>
+                </div>
                 <div id="result"></div>
     </main>
     
-
-    <footer>
-        <p id="footer_text">Made by Milena Sol Aron.</p>
+    <footer id="footer">
+        <p id="footer_text">Made by <a href="https://github.com/aronmilenait">Milena Sol Aron.</a></p>
     </footer>
 
     <script src="src/currency_converter.js"></script>

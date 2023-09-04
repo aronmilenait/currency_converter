@@ -6,6 +6,7 @@ const $amountInput = document.querySelector('#amount');
 const $calculateBtn = document.querySelector('#calculateBtn');
 const $result = document.querySelector('#result');
 
+// Function to load currency data and populate the currency select options
 async function loadCurrencies() {
     try {
         const data = await fetchCurrenciesData();
@@ -14,11 +15,14 @@ async function loadCurrencies() {
         console.error('Error: loading currencies', error);
     }
 }
+
+// Function to fetch currency data from the API
 async function fetchCurrenciesData() {
     const response = await fetch(latestRatesUrl);
     return await response.json();
 }
 
+// Function to populate currency select options based on the fetched data
 function populateCurrencyOptions(rates) {
     const currencyOptions = Object.keys(rates);
 
@@ -28,6 +32,7 @@ function populateCurrencyOptions(rates) {
     }
 }
 
+// Function to create and append an option element to a select element
 function createOptionElement(currencyCode, selectElement) {
     const option = document.createElement('option');
     option.value = currencyCode;
@@ -37,13 +42,14 @@ function createOptionElement(currencyCode, selectElement) {
 
 window.addEventListener('load', loadCurrencies);
 
+// Add a click event listener to the calculate button
 $calculateBtn.addEventListener('click', async() => {
     try {
         const baseCurrency = $baseCurrencySelect.value;
         const targetCurrency = $targetCurrencySelect.value;
         const amount = parseFloat($amountInput.value);
 
-        if (isNaN(amount)) {
+        if (isNaN(amount) || amount <= 0) {
             $result.textContent = 'Please, enter a valid number.';
             return;
         }
